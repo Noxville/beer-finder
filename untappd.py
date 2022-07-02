@@ -35,7 +35,11 @@ mappings = {
     7209459744940: (False, 'Local Craft Beer (LCB) Meet Me In the Red Room'),
     7251923304620: (False, 'Evil Twin Brewing Retro IPA'),
     7206496534700: (False, 'Equilibrium Brewery - Austin'),
+    7275499126956: (False, 'El Segundo fremont'),
     6911544885420: (True, None),
+    7105889697964: (True, None),
+    7289040699564: (True, None),
+    6120704704684: (True, None),
     1902227914823: (True, None),
     6812758016172: (True, None),
     4894592139335: (True, None),
@@ -92,13 +96,20 @@ mappings = {
     7215313387692: (True, None),
     4360822423623: (True, None),
     7215323545772: (True, None),
+    7278163656876: (True, None),
     6867445186732: (True, None),
+    6874674004140: (True, None),
+    7285267366060: (True, None),
+    7357607346348: (True, None),
+    6874654277804: (True, None),
     4360811184199: (True, None),
     6766602584236: (True, None),
     196569333785: (True, None),
     196568907801: (True, None),
     6911539937452: (True, None),
-    4829818945607: (True, None)
+    4829818945607: (True, None),
+    1725193912391: (True, None),
+    7286712697004: (True, None)
 }
 
 
@@ -131,7 +142,8 @@ def untappd(beer):
 with open('beer_republic.catalogue') as fin:
     beers = json.load(fin)
 
-    for b in beers:
+    for idx, b in enumerate(beers):
+        print(f"{1 + idx}/{len(beers)}")
         f_name = f"./data/{b['id']}.beer"
 
         if os.path.exists(f_name) and os.stat(f_name).st_size:
